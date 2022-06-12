@@ -2,8 +2,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer'); //need to install still
 // TODO: Create an array of questions for user input
-const questions = [];
-const promptQuestions = () => {
+const promptQuestions = questions => {
+    if (!questions.projects) {
+    const questions = [];
+    }
     return inquirer.prompt([
         {
             type: 'input',
@@ -50,8 +52,22 @@ const promptQuestions = () => {
             name: 'email',
             message: 'Please enter your email address'
         }
-    ]);
+    ])
+    .then(projectData => {
+        questions.projects.push(projectData);
+        if (projectData.confirmAddProject) {
+            return promptQuestions(questions);
+        } else {
+            return questions;
+        }
+    })
 };
+
+promptQuestions()
+    .then(writeToFile)
+    .then(questions => {
+        console.log(questions);
+    });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
