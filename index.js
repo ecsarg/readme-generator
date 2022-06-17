@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-const inquirer = require('inquirer'); //need to install still
+const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
 const promptQuestions = questions => {
     if (!questions.projects) {

@@ -1,22 +1,14 @@
 {
-  "dependencies": {
-    "inquirer": "^8.2.4"
-  },
-  "name": "readme-generator",
-  "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide) # readme-generator",
+  "name": "static-site",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ecsarg/readme-generator.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ecsarg/readme-generator/issues"
-  },
-  "homepage": "https://github.com/ecsarg/readme-generator#readme"
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  }
 }
