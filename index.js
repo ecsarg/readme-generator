@@ -2,10 +2,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
-const promptQuestions = questions => {
-    if (!questions.projects) {
+const promptQuestions = () => {
+    //if (!questions.projects) {
     const questions = [];
-    }
+    
     return inquirer.prompt([
         {
             type: 'input',
@@ -40,7 +40,8 @@ const promptQuestions = questions => {
         {
             type: 'checkbox',
             name: 'license',
-            message: 'Choose a license for your project from the list below'
+            message: 'Choose a license for your project from the list below',
+            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
         },
         {
             type: 'input',
@@ -60,7 +61,7 @@ const promptQuestions = questions => {
         } else {
             return questions;
         }
-    })
+    });
 };
 
 promptQuestions()
