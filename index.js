@@ -74,6 +74,9 @@ const writeToFile = data => {
 const init = () => {
     return inquirer.prompt(questions)
     .then(writeToFile)
+    .then(responses => {
+        return generatePage(responses)
+    })
 };
 
 // Function call to initialize app
